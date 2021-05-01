@@ -1,7 +1,7 @@
 # Given a string, check if the braces are balanced
 # (each opening bracket must have a closing bracket)
 
-def check_braces(string):
+def checkBalancedBraces(string):
     char_list = []
 
     for i in string:
@@ -45,7 +45,7 @@ def exists(input_list):
 #         if nums[index_i] + nums[index_f] == target:
 #             return [index_i, index_f]
 
-def two_sum(nums, target):
+def twoSum(nums, target):
     hashmap = {}
 
     for index in range(len(nums)):
@@ -55,3 +55,27 @@ def two_sum(nums, target):
             return [hashmap[complement], index]
 
         hashmap[nums[index]] = index
+
+
+# Self Dividing Numbers
+# Find the numbers that are divisible
+# by each of their digits (R = 0) in a given range
+def selfDividingNumbers(left, right):
+    numbers = []
+    for num in range(left, right + 1):
+        is_self_dividing = True
+
+        if '0' in str(num):
+            continue
+
+        for digit in str(num):
+            if num % int(digit) != 0:
+                is_self_dividing = False
+                break
+
+        if is_self_dividing:
+            numbers.append(num)
+
+    return numbers
+
+
