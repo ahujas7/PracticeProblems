@@ -117,3 +117,15 @@ def countBalls(low_limit, high_limit):
             max = boxes[element]
 
     return max
+
+
+# Subtract the Product and Sum of Digits of an Integer
+
+def subtractProductAndSum(n):
+    sum = 0
+    product = 1
+    for char in str(n):
+        sum += int(char)
+        product *= int(char)
+
+    return product - sum
