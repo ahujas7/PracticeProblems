@@ -129,3 +129,23 @@ def subtractProductAndSum(n):
         product *= int(char)
 
     return product - sum
+
+
+def numberOfLines(widths, s):
+    letter_width = {}
+    count = 0
+
+    for char in 'abcdefghijklmnopqrstuvwxyz':
+        letter_width[char] = widths[count]
+        count += 1
+
+    total = 0
+    lines = 1
+    for char in s:
+        if total + letter_width[char] > 100:
+            lines += 1
+            total = 0
+        total += letter_width[char]
+
+    return [lines, total]
+
