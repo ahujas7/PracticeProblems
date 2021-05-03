@@ -60,6 +60,7 @@ def twoSum(nums, target):
 # Self Dividing Numbers
 # Find the numbers that are divisible
 # by each of their digits (R = 0) in a given range
+
 def selfDividingNumbers(left, right):
     numbers = []
     for num in range(left, right + 1):
@@ -79,3 +80,23 @@ def selfDividingNumbers(left, right):
     return numbers
 
 
+# Sum of digits in Base k
+# Given an integer in base 10 and a base k,
+# return the sum of the digits of n after being
+# converted to base k
+
+def sumBase(n, base):
+    quotient = n
+    digits = []
+
+    while quotient >= base:
+        digits.insert(0, str(quotient % base))
+        quotient = quotient // base
+
+    digits.insert(0, str(quotient))
+    sum = 0
+
+    for char in digits:
+        sum += int(char)
+
+    return sum
