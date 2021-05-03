@@ -149,3 +149,21 @@ def numberOfLines(widths, s):
 
     return [lines, total]
 
+
+# Given a positive integer num, output its complement
+# number. The complement strategy is to
+# flip the bits of its binary representation.
+
+def findComplement(num):
+    string = str(bin(num))[2:]
+    complement = 0
+
+    for i in range(0, len(string)):
+        if string[i] == '0':
+            complement += 2 ** (len(string) - i - 1)
+
+    return complement
+
+
+
+
