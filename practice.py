@@ -87,16 +87,11 @@ def selfDividingNumbers(left, right):
 
 def sumBase(n, base):
     quotient = n
-    digits = []
-
-    while quotient >= base:
-        digits.insert(0, str(quotient % base))
-        quotient = quotient // base
-
-    digits.insert(0, str(quotient))
     sum = 0
 
-    for char in digits:
-        sum += int(char)
+    while quotient >= base:
+        sum += quotient % base
+        quotient = quotient // base
 
+    sum += quotient
     return sum
