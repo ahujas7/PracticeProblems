@@ -95,3 +95,25 @@ def sumBase(n, base):
 
     sum += quotient
     return sum
+
+
+# Max number of balls in a box
+
+def countBalls(low_limit, high_limit):
+    boxes = {}
+
+    for ball in range(low_limit, high_limit + 1):
+        box_num = 0
+        for char in str(ball):
+            box_num += int(char)
+        if box_num in boxes:
+            boxes[box_num] += 1
+        else:
+            boxes[box_num] = 1
+
+    max = 0
+    for element in boxes:
+        if boxes[element] > max:
+            max = boxes[element]
+
+    return max
