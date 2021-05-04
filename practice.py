@@ -165,5 +165,21 @@ def findComplement(num):
     return complement
 
 
+# Format License Keys
+
+def licenseKeyFormatting(s, k):
+    string = ''.join(s.split('-'))
+    output = ''
+
+    output += string[0:len(string) % k]
+
+    for i in range(len(string) % k, len(string), k):
+
+        if output != '':
+            output += '-'
+
+        output += string[i:(i + k)]
+
+    return output.upper()
 
 
