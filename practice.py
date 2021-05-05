@@ -200,4 +200,16 @@ def isStraightLine(coordinates):
     return True
 
 
+# Happy Number
+
+def isHappy(n):
+
+    for i in range(100):
+        sum = 0
+        for digit in str(n):
+            sum += int(digit) ** 2
+        if sum == 1:
+            return True
+        n = sum
+    return False
 
