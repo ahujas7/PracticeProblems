@@ -183,3 +183,21 @@ def licenseKeyFormatting(s, k):
     return output.upper()
 
 
+# Check if it is a straight line
+
+def isStraightLine(coordinates):
+    prev_rise = abs(coordinates[1][1] - coordinates[0][1])
+    prev_run = abs(coordinates[1][0] - coordinates[0][0])
+
+    for i in range(1, len(coordinates) - 1):
+        curr_rise = abs(coordinates[i + 1][1] - coordinates[i][1])
+        curr_run = abs(coordinates[i + 1][0] - coordinates[i][0])
+        if curr_rise != prev_rise or curr_run != prev_run:
+            return False
+        prev_rise = curr_rise
+        prev_run = curr_run
+
+    return True
+
+
+
