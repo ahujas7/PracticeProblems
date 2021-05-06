@@ -231,15 +231,8 @@ def replaceDigits(s):
 # Replace Elements with Greatest Element on Right Side
 
 def replaceElements(arr):
-    new_arr = []
-    if len(arr) == 1:
-        return [-1]
+    max_val = -1
 
-    for index in range(1, len(arr)):
-        sorted = arr[index:]
-        sorted.sort()
-
-        new_arr.append(sorted[len(sorted) - 1])
-
-    new_arr.append(-1)
-    return new_arr
+    for index in range(len(arr) - 1, -1, -1):
+        arr[index], max_val = max_val, max(arr[index], max_val)
+    return arr
