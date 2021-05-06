@@ -1,3 +1,5 @@
+import math
+
 # Given a string, check if the braces are balanced
 # (each opening bracket must have a closing bracket)
 
@@ -236,3 +238,20 @@ def replaceElements(arr):
     for index in range(len(arr) - 1, -1, -1):
         arr[index], max_val = max_val, max(arr[index], max_val)
     return arr
+
+
+# Middle of the Linked List
+class ListNode(object):
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+def middleNode(head):
+    list = [head]
+    while head.next:
+        head = head.next
+        list.append(head.val)
+    return list[len(list) // 2]
+
+
+
