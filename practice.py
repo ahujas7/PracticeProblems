@@ -227,3 +227,19 @@ def replaceDigits(s):
             s = s.replace(s[index], letters[digit], 1)
     return s
 
+
+# Replace Elements with Greatest Element on Right Side
+
+def replaceElements(arr):
+    new_arr = []
+    if len(arr) == 1:
+        return [-1]
+
+    for index in range(1, len(arr)):
+        sorted = arr[index:]
+        sorted.sort()
+
+        new_arr.append(sorted[len(sorted) - 1])
+
+    new_arr.append(-1)
+    return new_arr
