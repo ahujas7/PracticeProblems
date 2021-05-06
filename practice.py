@@ -204,7 +204,7 @@ def isStraightLine(coordinates):
 
 def isHappy(n):
 
-    for i in range(100):
+    for i in range(10):
         sum = 0
         for digit in str(n):
             sum += int(digit) ** 2
@@ -212,4 +212,18 @@ def isHappy(n):
             return True
         n = sum
     return False
+
+
+# Replace all Digits with Characters
+
+def replaceDigits(s):
+    letters = 'abcdefghijklmnopqrstuvwxyz'
+
+    for index in range(0, len(s)):
+        if index % 2 == 0:
+            char = s[index]
+        else:
+            digit = int(s[index]) + letters.index(char)
+            s = s.replace(s[index], letters[digit], 1)
+    return s
 
