@@ -246,6 +246,7 @@ class ListNode(object):
         self.val = val
         self.next = next
 
+
 def middleNode(head):
     list = [head]
     while head.next:
